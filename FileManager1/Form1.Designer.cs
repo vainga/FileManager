@@ -37,20 +37,20 @@
             // textBoxLogin
             // 
             textBoxLogin.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxLogin.Location = new Point(135, 185);
+            textBoxLogin.Location = new Point(135, 141);
             textBoxLogin.Name = "textBoxLogin";
             textBoxLogin.Size = new Size(142, 23);
             textBoxLogin.TabIndex = 0;
-            textBoxLogin.Text = "Пароль...";
+            textBoxLogin.Text = "Логин...";
             // 
             // textBoxPassword
             // 
             textBoxPassword.Font = new Font("Segoe UI Semilight", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBoxPassword.Location = new Point(135, 145);
+            textBoxPassword.Location = new Point(135, 181);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.Size = new Size(142, 23);
             textBoxPassword.TabIndex = 1;
-            textBoxPassword.Text = "Логин...";
+            textBoxPassword.Text = "Пароль...";
             // 
             // buttonEnter
             // 

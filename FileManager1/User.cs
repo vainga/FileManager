@@ -17,7 +17,6 @@ namespace FileManager1
 
         public User()
         {
-            userId = -1;
             _Login = "";
             _Password = "";
         }
@@ -113,12 +112,12 @@ namespace FileManager1
 
         public int Registration(string login, string password)
         {
-            int userId = 0;
             string executablePath = AppDomain.CurrentDomain.BaseDirectory;
             string parentPath = Directory.GetParent(executablePath).FullName;
             string dataFolderPath = Path.Combine(parentPath, "Data");
             string userFolderPath = Path.Combine(dataFolderPath, "UserData");
             Directory.CreateDirectory(userFolderPath);
+            
             User user = new User();
             user._Login = login;
             user._Password = password;
@@ -136,6 +135,7 @@ namespace FileManager1
                 string hashedPassword = user.HashPassword(user._Password);
                 if (!user.IsLoginUnique(user._Login))
                 {
+                    connection.Close();
                     return -1;
                 }
                 else
@@ -145,8 +145,7 @@ namespace FileManager1
                         insertCommand.Parameters.AddWithValue("@Login", user._Login);
                         insertCommand.Parameters.AddWithValue("@Password", hashedPassword);
 
-                        userId = Convert.ToInt32(insertCommand.ExecuteScalar());
-
+                        user.userId = Convert.ToInt32(insertCommand.ExecuteScalar());
                     }
                     connection.Close();
                     return user.userId;

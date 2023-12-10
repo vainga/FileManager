@@ -13,11 +13,16 @@ namespace FileManager1
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 loginForm = new Form1();
-            Application.Run(loginForm);
 
-            MainForm mainForm = new MainForm();
-            Application.Run(mainForm);
-
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                MainForm mainForm = new MainForm();
+                Application.Run(mainForm);
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
     }

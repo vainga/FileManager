@@ -21,6 +21,7 @@ namespace FileManager1
             if (UserId != -1)
             {
                 MainForm mainForm = new MainForm();
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
         }
@@ -33,9 +34,10 @@ namespace FileManager1
             if (UserId != -1)
             {
                 MainForm mainForm = new MainForm();
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            else
+            else if (UserId == -1)
             {
                 MessageBox.Show("ѕользователь с таким логином уже существует!");
             }

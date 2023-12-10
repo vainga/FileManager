@@ -88,6 +88,7 @@ namespace FileManager1
             }
             return accessLevel;
         }
+
         private void LoadFileNamesToListView()
         {
             listViewFiles.Items.Clear();
